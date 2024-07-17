@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="PetFace: A Large-Scale Dataset and Benchmark \\for Animal Identification">
+  <meta name="keywords" content="Animal, Identification">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PetFace: A Large-Scale Dataset and Benchmark \\for Animal Identification</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">PetFace: A Large-Scale Dataset and Benchmark for Animal Identification</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://sites.google.com/view/risashinoda/home">Risa Shinoda</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://mapooon.github.io/">Kaede Shiohara</a><sup>2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Kyoto University,</span>
+            <span class="author-block"><sup>2</sup>The University of Tokyo</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://forms.gle/xgkZSg6yWjfBhCGE6"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fa fa-database"></i>
+                  </span>
+                  <span>Data</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=5qj9_wQ_fQg"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/dahlian00/SegRCDB"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div style="display: flex; justify-content: center;">
+        <img src="static/images/figA.png" alt="Banner image" style="height: 40vh; width: auto; display: block;">
+      </div>
+          <h2 class="subtitle has-text-centered"><br>
+            We introduce a large-scale animal face re-identification dataset PetFace that include 257,484 unique individuals across 13 families and 319 breeds. From the left, the images represent Cat, Chimpanzee, Chinchilla, Degus, Dog, Ferret, Guinea pig, Hamster, Hedgehog, Parakeet, Java sparrow, Pig, and Rabbit. The four images enclosed within the white square's grid lines represent the same identity.
+          </h2>
+    </div>
+    
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Automated animal face identification plays a crucial role in the monitoring of behaviors, conducting of surveys, and finding of lost animals. Despite the advancements in human face identification, the lack of datasets and benchmarks in the animal domain has impeded progress. In this paper, we introduce the PetFace dataset, a comprehensive resource for animal face identification encompassing 257,484 unique individuals across 13 animal families and 319 breed categories, including both experimental and pet animals. 
+            This large-scale collection of individuals facilitates the investigation of unseen animal face verification, an area that has not been sufficiently explored in existing datasets due to the limited number of individuals. 
+            Moreover, PetFace also has fine-grained annotations such as sex, breed, color, and pattern.  
+            The models trained on our dataset outperform those trained on prior datasets, even for detailed breed variations and unseen animal families.
+            Our result also indicates that there is some room to improve the performance of integrated identification on multiple animal families.
+            We hope the PetFace dataset will facilitate animal face identification and encourage the development of non-invasive animal automatic identification methods. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <!-- <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/5qj9_wQ_fQg"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div> -->
+        <p>
+          Comig soon...
+        </p>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+        <h2 class="title is-3">Dataset distribution</h2>
+        <p>
+          Each figure represents (a) the number of individuals in each animal family. (b) the sex distribution percentage by animal family. (c) examples of breed annotations. (d) examples of color annotations.
+        </p>
+        <img src="static/images/figB.png" alt="Banner image" height="110%">
+      </div>
+    </div>
+  </div>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Benchmarks on PetFace</h2>
+        <h3 class="custom-h3">Result on animal re-identification</h3>
+        <div class="content has-text-justified">
+        <p>
+          ArcFace outperforms the other loss functions. The jointly trained model on our PetFace shows the best average top-1 accuracy.
+        </p>
+       </div>
+        <img src="static/images/tableA.png" alt="Banner image" height="110%">
+      </div>
+    </div>
+  </div>
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered">
+      
+      <div class="column is-four-fifths">
+        <h3 class="custom-h3">Result on animal verification</h3>
+        <div class="content has-text-justified">
+        <p>
+          Jointly trained on our PetFace shows the best performance. We also compared to the trained models on other dataset.
+        </p>
+      </div>
+        <img src="static/images/tableB.png" alt="Banner image" height="110%">
+      </div>
+    </div>
+  </div>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+        <p>
+          Similarity distributions of (a) CLIP, (b) MegaDescriptor, and (c) our joint-trained model on cats. The horizontal axis represents similarity and the vertical axis represents frequency. The model trained on PetFace shows the most distinct separation between positive and negative samples.
+        </p>
+      </div>
+        <img src="static/images/figC.png" alt="Banner image" height="110%">
+      </div>
+    </div>
+  </div>
+      
+  </div>
+    <!--/ Matting. -->
+
+  </div>
+  <div class="container is-max-desktop">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3">Dataset Link</h2>
+      <div class="content has-text-justified">
+      <p>
+        This dataset is for research purposes only. Please fill in the 
+        <a href="https://forms.gle/xgkZSg6yWjfBhCGE6" target="_blank">Google Form</a> 
+        to confirm that the usage is for research purposes. 
+        We will send the dataset link as soon as we confirm the Google Form.
+      </p>      
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@InProceedings{Shinoda_2023_ICCV,
+      author    = {Shinoda, Risa and Hayamizu, Ryo and Nakashima, Kodai and Inoue, Nakamasa and Yokota, Rio and Kataoka, Hirokatsu},
+      title     = {SegRCDB: Semantic Segmentation via Formula-Driven Supervised Learning},
+      booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+      month     = {October},
+      year      = {2023},
+      pages     = {20054-20063}
+  }</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
