@@ -1,347 +1,278 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>AnimalClue</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://kit.fontawesome.com/f8ddf9854a.js" crossorigin="anonymous"></script>
-    <meta charset="utf-8">
-    <meta name="description"
-          content="AnimalClue: Recognizing Animals by their Traces">
-    <meta name="keywords" content="MMMU, LMM, LMM Evaluation, Vision Language Model, Large Language Model, Large Multimodal Model, artificial intelligence, AI, AGI, artificial general intelligence">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> AnimalClue: Recognizing Animals by their Traces</title>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="PetFace: A Large-Scale Dataset and Benchmark \\for Animal Identification">
+  <meta name="keywords" content="Animal, Identification">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PetFace: A Large-Scale Dataset and Benchmark \\for Animal Identification</title>
 
-    <link rel="icon" href="./static/images/clue_icon.png">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+    function gtag() {
+      dataLayer.push(arguments);
+    }
 
-    <link rel="stylesheet" href="./static/css/bulma.min.css">
-    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-    <link rel="stylesheet" href="./static/css/index.css">
-    <script src="https://kit.fontawesome.com/fff5b27ec1.js" crossorigin="anonymous"></script>
-    <!-- <script src="https://kit.fontawesome.com/eaf1856e6f.js" crossorigin="anonymous"></script> -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script defer src="./static/js/fontawesome.all.min.js"></script>
-    <script src="./static/js/bulma-carousel.min.js"></script>
-    <script src="./static/js/bulma-slider.min.js"></script>
-    <script src="./static/js/index.js"></script>
-  </head>
-  <body>
+    gtag('js', new Date());
 
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-      <div class="navbar-menu">
-        <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link">
-              More Research
-            </a>
-            <div class="navbar-dropdown">
-              <a class="navbar-item" href="https://dahlian00.github.io/PetFacePage/">
-                <b>PetFace</b> <span style="font-size:18px; display: inline; margin-left: 5px;">🔥</span>
-              </a>
-              <a class="navbar-item" href="https://dahlian00.github.io/SegRCDBPage/">
-                SegRCDB
-              </a>
-            
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">PetFace: A Large-Scale Dataset and Benchmark for Animal Identification</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://sites.google.com/view/risashinoda/home">Risa Shinoda*</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://mapooon.github.io/">Kaede Shiohara*</a><sup>2</sup>
+            </span>
+          </div>
+          <p>*These authors contributed equally to this work.</p>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Kyoto University,</span>
+            <span class="author-block"><sup>2</sup>The University of Tokyo</span>
+          </div>
+          <font size="4">ECCV 2024</font>
+          <font size="4">ECCV 2024 Oral</font>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2407.13555"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://forms.gle/xgkZSg6yWjfBhCGE6"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fa fa-database"></i>
+                  </span>
+                  <span>Data</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://youtu.be/R-lZGkIec9Q"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/mapooon/PetFace"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
           </div>
         </div>
       </div>
-    </nav>
+    </div>
+  </div>
+</section>
 
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div style="display: flex; justify-content: center;">
+        <img src="static/images/figA.png" alt="Banner image" style="max-width: 85%; height: auto; display: block;">
+      </div>
+          <h2 class="subtitle has-text-centered"><br>
+            We introduce a large-scale animal face re-identification dataset PetFace that include 257,484 unique individuals across 13 families and 319 breeds. From the left, the images represent Cat, Chimpanzee, Chinchilla, Degus, Dog, Ferret, Guinea pig, Hamster, Hedgehog, Parakeet, Java sparrow, Pig, and Rabbit. The four images enclosed within the white square's grid lines represent the same identity.
+          </h2>
+    </div>
 
+  </div>
+</section>
 
-    <!-- AFTER（修正後） -->
-    <section class="hero">
-      <div class="hero-body has-text-centered">
-        <h1 class="title is-1 publication-title is-bold">
-          <img src="static/images/clue_icon.png" style="width:1em; vertical-align: middle" alt="Logo"/>
-          <span class="mmmu" style="vertical-align: middle">AnimalClue</span>
-        </h1>
-        <h2 class="subtitle is-3 publication-subtitle">
-          AnimalClue: Recognizing Animals by their Traces
-        </h2>
-        <h3 class="subtitle is-3 publication-subtitle">
-          ICCV 2025 Highlight
-        </h3>
-        <div class="is-size-5 publication-authors">
-          <br>
-          <span class="author-block">
-            <a href="https://sites.google.com/view/risashinoda/home" style="text-decoration: none; color: inherit;">Risa Shinoda<sup>1,2,4</sup></a>,
-          </span>
-          <span class="author-block">
-            <a href="https://mmai.tech/" style="text-decoration: none; color: inherit;">Nakamasa Inoue<sup>3,4</sup></a>,
-          </span>
-          <span class="author-block">
-            <a href="https://scholar.google.com/citations?user=n9nXAPcAAAAJ&hl=en" style="text-decoration: none; color: inherit;">Iro Laina<sup>5</sup></a>,
-          </span>
-          <span class="author-block">
-            <a href="https://chrirupp.github.io/" style="text-decoration: none; color: inherit;">Christian Rupprecht<sup>5</sup></a>,
-          </span>
-          <span class="author-block">
-            <a href="https://hirokatsukataoka.net/" style="text-decoration: none; color: inherit;">Hirokatsu Kataoka<sup>4,5</sup></a>
-          </span>
-        </div>
-        <div class="is-size-6 has-text-centered mt-3">
-          <p><sup>1</sup>The University of Osaka <sup>2</sup>Kyoto University <sup>3</sup>Tokyo Institute of Technology</p>
-          <p><sup>4</sup>National Institute of Advanced Industrial Science and Technology (AIST) <sup>5</sup>Visual Geometry Group, University of Oxford</p>
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Automated animal face identification plays a crucial role in the monitoring of behaviors, conducting of surveys, and finding of lost animals. Despite the advancements in human face identification, the lack of datasets and benchmarks in the animal domain has impeded progress. In this paper, we introduce the PetFace dataset, a comprehensive resource for animal face identification encompassing 257,484 unique individuals across 13 animal families and 319 breed categories, including both experimental and pet animals. 
+            This large-scale collection of individuals facilitates the investigation of unseen animal face verification, an area that has not been sufficiently explored in existing datasets due to the limited number of individuals. 
+            Moreover, PetFace also has fine-grained annotations such as sex, breed, color, and pattern.  
+            The models trained on our dataset outperform those trained on prior datasets, even for detailed breed variations and unseen animal families.
+            Our result also indicates that there is some room to improve the performance of integrated identification on multiple animal families.
+            We hope the PetFace dataset will facilitate animal face identification and encourage the development of non-invasive animal automatic identification methods. 
+          </p>
         </div>
       </div>
-      <div class="column has-text-centered">
-        <div class="publication-links">
-          <span class="link-block">
-            <a href="" class="external-link button is-normal is-rounded is-dark">
-              <span class="icon">
-                <i class="fas fa-file-pdf"></i>
-              </span>
-              <span>arXiv</span>
-            </a>
-          </span>
-          <span class="link-block">
-            <a href="https://huggingface.co/risashinoda" class="external-link button is-normal is-rounded is-dark">
-              <span class="icon" style="font-size:18px">🤗</span>
-              <span>Dataset</span>
-            </a>
-          </span>
-          <span class="link-block">
-            <a href="https://github.com/dahlian00/AnimalClue" class="external-link button is-normal is-rounded is-dark">
-              <span class="icon">
-                <i class="fab fa-github"></i>
-              </span>
-              <span>Code</span>
-            </a>
-          </span>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/R-lZGkIec9Q?si=c01OUzgHV9HrcCqW"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
-    </section>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+        <h2 class="title is-3">Dataset distribution</h2>
+        <p>
+          Each figure represents (a) the number of individuals in each animal family. (b) the sex distribution percentage by animal family. (c) examples of breed annotations. (d) examples of color annotations.
+        </p>
+        <img src="static/images/figB.png" alt="Banner image" height="110%">
+      </div>
+    </div>
+  </div>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Benchmarks on PetFace</h2>
+        <h3 class="custom-h3">Result on animal re-identification</h3>
+        <div class="content has-text-justified">
+        <p>
+          ArcFace outperforms the other loss functions. The jointly trained model on our PetFace shows the best average top-1 accuracy.
+        </p>
+       </div>
+        <img src="static/images/tableA.png" alt="Banner image" height="110%">
+      </div>
+    </div>
+  </div>
+  <div class="container is-max-desktop">
 
-    <section class="hero teaser">
-      <div class="container is-max-desktop has-text-centered">
-        <img src="static/images/animalclue_overview.png" alt="geometric reasoning",style="margin-top: 20rem;">
-        <p>Example images of AnimalClue. We present AnimalClue, a dataset designed for identifying animal species based on their traces. Our dataset includes footprints, feces, eggs, bones, and feathers, totaling 159,605 bounding boxes from 968 animal species. We also annotate 22 traits such as habitat, diet, and activity pattern.
-          We establish four benchmarks for evaluating models: classification, detection, instance segmentation, and traits classification. 
+    <div class="columns is-centered has-text-centered">
+
+      <div class="column is-four-fifths">
+        <h3 class="custom-h3">Result on animal verification</h3>
+        <div class="content has-text-justified">
+        <p>
+          Jointly trained on our PetFace shows the best performance. We also compared to the trained models on other dataset.
         </p>
       </div>
-    </section> 
-
-    <section class="section">
-      <div class="container" style="margin-bottom: 2vh;">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">🔔News</h2>
-            <div class="content has-text-justified">
-              <p>
-                <!-- <b>🔥[2024-09-05] Introducing <a href="https://arxiv.org/abs/2409.02813">MMMU-Pro</a>, a robust version of MMMU benchmark for multimodal AI evaluation! 🚀</b> -->
-              </p>
-          </div>
-            <h2 class="title is-3">Introduction</h2>
-            <div class="content has-text-justified">
-              <p>
-                Wildlife observation plays an important role in biodiversity conservation, necessitating robust methodologies for monitoring wildlife populations and interspecies interactions. Recent advances in computer vision have significantly contributed to automating fundamental wildlife observation tasks, such as animal detection and species identification. However, accurately identifying species from indirect evidence like footprints and feces remains relatively underexplored, despite its importance in contributing to wildlife monitoring. To bridge this gap, we introduce AnimalClue, the first large-scale dataset for species identification from images of indirect evidence. Our dataset consists of 159,605 bounding boxes encompassing five categories of indirect clues: footprints, feces, eggs, bones, and feathers. It covers 968 species, 200 families, and 65 orders. Each image is annotated with species-level labels, bounding boxes or segmentation masks, and fine-grained trait information, including activity patterns and habitat preferences. Unlike existing datasets primarily focused on direct visual features (e.g., animal appearances), AnimalClue presents unique challenges for classification, detection, and instance segmentation tasks due to the need for recognizing more detailed and subtle visual features. In our experiments, we extensively evaluate representative vision models and identify key challenges in animal identification from their traces.
-              </p>
-            </div>
-          </div>
-        </div>
-    
+        <img src="static/images/tableB.png" alt="Banner image" height="110%">
+      </div>
     </div>
-    </section>
-
-
-    <section class="hero is-light is-small">
-      <div class="hero-body has-text-centered">
-        <h1 class="title is-1 mmmu">
-          <img src="static/images/clue_icon.png" alt="Logo" class="mmmu-logo"/>
-          <span class="mmmu">AnimalClue</span>
-        </h1>
+  </div>
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <div class="content has-text-justified">
+        <p>
+          Similarity distributions of (a) CLIP, (b) MegaDescriptor, and (c) our joint-trained model on cats. The horizontal axis represents similarity and the vertical axis represents frequency. The model trained on PetFace shows the most distinct separation between positive and negative samples.
+        </p>
       </div>
-    </section>
-    
-    
-
-
-    <section class="section">
-      <div class="container">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Overview</h2>
-            <div class="content has-text-justified">
-              <img src="static/images/annotation.png" alt="algebraic reasoning" class="center">
-              <br>
-              <p>
-                <strong>Our dataset</strong> consists of <strong>968 species, 200 families, and 65 orders</strong>. 
-                It includes a total of <strong>159,605 bounding boxes</strong> across five trace types:
-              </p>
-              <ul>
-                <li><strong>Footprints:</strong> 18,291 boxes from 7,581 images, covering 117 species, 46 families, and 20 orders</li>
-                <li><strong>Feces:</strong> 18,932 boxes from 6,433 images, covering 101 species, 46 families, and 21 orders</li>
-                <li><strong>Bones:</strong> 16,553 boxes from 12,908 images, covering 269 species, 112 families, and 45 orders</li>
-                <li><strong>Eggs:</strong> 29,434 boxes from 9,394 images, covering 283 species, 67 families, and 20 orders</li>
-                <li><strong>Feathers:</strong> 76,395 boxes from 60,491 images, covering 555 species, 89 families, and 30 orders</li>
-              </ul>
-              <p>
-                The total number of bounding boxes matches that of the classification dataset, while the number of images aligns with the detection and segmentation datasets.
-              </p>
-
-            </div>
-          </div>
-        </div>
-    
-
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Comparisons with Existing Benchmarks</h2>
-            <div class="content has-text-justified">
-              <p>
-                While direct animal identification has been extensively studied, there remains significant potential to explore indirect methods—such as identifying animals through the traces they leave behind. 
-                Our <strong>AnimalClue</strong> dataset comprises <strong>five trace types</strong> and <strong>968 species</strong>, with a total of <strong>159,605 bounding boxes</strong>. 
-                It supports a wide range of tasks and includes <strong>fine-grained annotations</strong>.
-              </p>
-              <div class="content has-text-centered">
-                <img src="static/images/comparison.png" alt="algebraic reasoning" class="center">
-                <p> Comparison with previous animal tracking datasets. CLS, DET, and SEG indicate classification, detection, and instance segmentation, respectively. Our AnimalClue contains diverse species and more number of bounding boxes.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Statistics</h2>
-            <div class="content has-text-justified">
-              <div class="content has-text-centered">
-                <img src="static/images/statistics_100.png" alt="algebraic reasoning" class="center">
-                <p> Comparison with previous animal tracking datasets. CLS, DET, and SEG indicate classification, detection, and instance segmentation, respectively. Our AnimalClue contains diverse species and more number of bounding boxes.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        <img src="static/images/figC.png" alt="Banner image" height="110%">
       </div>
-    </section>
+    </div>
+  </div>
 
-    <!-- RESULTS SECTION -->
-    <section class="hero is-light is-small">
-      <div class="hero-body has-text-centered">
-        <h1 class="title is-1 mmmu">Experiment Results</h1>
-      </div>
-    </section>
+  </div>
+    <!--/ Matting. -->
 
-    <section class="section">
-      <div class="container">
-        <!-------------------------------------------------------------------- RESULTS SECTION -------------------------------------------------------------------->
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Classification</h2>
-            <div class="content has-text-justified">
-              <div class="content has-text-centered">
-                <img src="static/images/classification.png" alt="algebraic reasoning" class="center">
-                <p> Classification accuracy for all, frequent, and rare categories of animal specie.Throughout the species, family, and order categorization, Swin-B model tends to be higher accuracies on AnimalClue.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Visialization of t-SNE</h2>
-            <div class="content has-text-justified">
-              <div class="content has-text-centered">
-                <img src="static/images/tnse.png" alt="algebraic reasoning" class="center">
-                <p> Visualization of t-SNE. By using a labeled dataset specialized for observing indirect animal clues, the separability among categories have been improved. When visualized in the feature space, the categories are better distinct.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Detection</h2>
-            <div class="content has-text-justified">
-              <div class="content has-text-centered">
-                <img src="static/images/detection.png" alt="algebraic reasoning" class="center">
-                <p> Visualization of t-SNE. By using a labeled dataset specialized for observing indirect animal clues, the separability among categories have been improved. When visualized in the feature space, the categories are better distinct.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Segmentation</h2>
-            <div class="content has-text-justified">
-              <div class="content has-text-centered">
-                <img src="static/images/segmentation.png" alt="algebraic reasoning" class="center">
-                <p> Visualization of t-SNE. By using a labeled dataset specialized for observing indirect animal clues, the separability among categories have been improved. When visualized in the feature space, the categories are better distinct.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Traits Classification</h2>
-            <div class="content has-text-justified">
-              <div class="content has-text-centered">
-                <img src="static/images/traits.png" alt="algebraic reasoning" class="center">
-                <p> Visualization of t-SNE. By using a labeled dataset specialized for observing indirect animal clues, the separability among categories have been improved. When visualized in the feature space, the categories are better distinct.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Visualization of detection results</h2>
-            <div class="content has-text-justified">
-              <div class="content has-text-centered">
-                <img src="static/images/vis_det.png" alt="algebraic reasoning" class="center">
-                <p> Visualization of t-SNE. By using a labeled dataset specialized for observing indirect animal clues, the separability among categories have been improved. When visualized in the feature space, the categories are better distinct.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Visualization of segmentation result</h2>
-            <div class="content has-text-justified">
-              <div class="content has-text-centered">
-                <img src="static/images/vis_seg.png" alt="algebraic reasoning" class="center">
-                <p> Visualization of t-SNE. By using a labeled dataset specialized for observing indirect animal clues, the separability among categories have been improved. When visualized in the feature space, the categories are better distinct.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-   
-    </section>
+  </div>
+  <div class="container is-max-desktop">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-four-fifths">
+      <h2 class="title is-3">Dataset Link</h2>
+      <div class="content has-text-justified">
+      <p>
+        This dataset is for research purposes only. Please fill in the 
+        <a href="https://forms.gle/xgkZSg6yWjfBhCGE6" target="_blank">Google Form</a> 
+        to confirm that the usage is for research purposes. 
+        We will send the dataset link as soon as we confirm the Google Form.
+      </p>      
+    </div>
+  </div>
+</div>
+</div>
+</section>
 
-    <!-- @PAN TODO: bibtex -->
-    <section class="section" id="BibTeX">
-      <div class="container is-max-desktop content">
-        <h2 class="title is-3 has-text-centered">BibTeX</h2>
-        <pre><code>
 
-    </code></pre>
-      </div>
-    </section>
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{shinoda2024petface,
+  title={PetFace: A Large-Scale Dataset and Benchmark for Animal Identification},
+  author={Shinoda, Risa and Shiohara, Kaede},
+  journal={arXiv preprint arXiv:2407.13555},
+  year={2024}
+}</code></pre>
+  </div>
+</section>
 
-    <footer class="footer">
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content">
-            <p>
-              This website is website adapted from <a href="https://nerfies.github.io/">Nerfies</a> and <a href="https://mathvista.github.io/">MathVista</a>, licensed under a <a rel="license"
-                                                  href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-              Commons Attribution-ShareAlike 4.0 International License</a>.
-            </p>
-          </div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This means you are free to borrow the <a
+              href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,
+            we just ask that you link back to this page in the footer.
+            Please remember to remove the analytics code included in the header of the website which
+            you do not want on your website.
+          </p>
         </div>
       </div>
-    </footer>
+    </div>
+  </div>
+</footer>
 
-  </body>
+</body>
 </html>
-
